@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-
+#importation des modules
 from labyrinthe import *
 from constantes import *
 
