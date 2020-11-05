@@ -1,7 +1,9 @@
 ﻿#!/usr/bin/python3
 # -*- coding: Utf-8 -*
 
+
 import pygame
+from pygame.locals import *
 
 # importation des modules
 
@@ -24,10 +26,11 @@ pygame.display.set_caption(TITRE_FENETRE)
 run = True
 
 while run:
+	
 	pygame.time.Clock().tick(30)
 	
 	for e in pygame.event.get():
-		if e.type == pygame.QUIT:
+		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_ESCAPE :
         	 run = False
 	lab=Labyrinthe()
 	lab.generer()
