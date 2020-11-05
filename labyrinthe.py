@@ -40,8 +40,8 @@ class Labyrinthe:
 		for ligne in self.structure:
 			nb_case = 0
 			for sprite in ligne:				
-				x = NB_SPRITE * TAILLE_SPRITE
-				y = NB_SPRITE * TAILLE_SPRITE
+				x = nb_case * TAILLE_SPRITE
+				y = nb_ligne * TAILLE_SPRITE
 				if sprite == 'm':
 					fenetre.blit(self.mur,(x,y))
 				elif sprite == 'd':
@@ -50,6 +50,7 @@ class Labyrinthe:
 					fenetre.blit(self.gardien,(x,y))
 				nb_case += 1
 			nb_ligne += 1
+		pygame.display.flip()
 			
 
                 
