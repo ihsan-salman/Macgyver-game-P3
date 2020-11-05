@@ -1,5 +1,5 @@
-﻿import pygame
-import constantes
+import pygame
+from constantes import *
 
 #définition de la classe labyrinthe 
 #et initialisation de sa structure avec pygame
@@ -34,7 +34,7 @@ class Labyrinthe:
 		self.fenetre = 0
 		self.mur = pygame.image.load(IMAGE_MUR).convert()
 		self.depart = pygame.image.load(IMAGE_DEPART).convert()
-		self.gardien = pygame.image.load(IMAGE_GARDIEN).convert_aplha()
+		self.gardien = pygame.image.load(IMAGE_GARDIEN).convert_alpha()
 		
 		nb_ligne = 0
 		for ligne in self.structure:
@@ -46,7 +46,7 @@ class Labyrinthe:
 					fenetre.blit(self.mur,(x,y))
 				elif sprite == 'd':
 					fenetre.blit(self.depart,(x,y))
-				elif sprit == 'g':
+				elif sprite == 'g':
 					fenetre.blit(self.gardien,(x,y))
 				nb_case += 1
 			nb_ligne += 1

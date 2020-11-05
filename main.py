@@ -1,12 +1,12 @@
-#!/usr/bin/python3
+﻿#!/usr/bin/python3
 # -*- coding: Utf-8 -*
 
 import pygame
 
 # importation des modules
 
-import labyrinthe
-import constantes
+from labyrinthe import *
+from constantes import *
 
 
 pygame.init()
@@ -22,15 +22,16 @@ pygame.display.set_caption(TITRE_FENETRE)
 # main loop
 
 run = True
-pygame.time.Clock().tick(30)
 
 while run:
+	pygame.time.Clock().tick(30)
 	
 	for e in pygame.event.get():
-		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE:
+		if e.type == pygame.QUIT:
         	 run = False
-lab = Labyrinthe()  # instance du labyrinthe
-lab.afficher(fenetre)  # instance de la methode 
+	lab=Labyrinthe()
+	lab.generer()
+	lab.afficher(fenetre)
 
 pygame.display.flip()
        
