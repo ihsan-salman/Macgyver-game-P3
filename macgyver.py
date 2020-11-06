@@ -1,15 +1,17 @@
 import pygame
 
 #importation des modules
-from labyrinthe import *
-from constantes import *
+import labyrinthe as lb
+import constantes as c
+
+lab=lb.Labyrinthe()
 
 
 class MacGyver:
 	def __init__(self):
 		"""Classe permettant de créer un personnage"""
 		
-		self.avance=pygame.image.load(IMAGE_MACGYVER).convert_alpha()
+		self.avance=pygame.image.load(c.IMAGE_MACGYVER).convert_alpha()
 		self.case_x = 0
 		self.case_y = 0
 		self.x = 0
@@ -23,10 +25,10 @@ class MacGyver:
 		
 		#déplacement vers la droite
 		if direction == "droite":
-			if self.case_x < (NB_SPRITE-1):
-				if self.structure[self.case_y][self.case_x+1] != 'm':
+			if self.case_x < (c.NB_SPRITE-1):
+				if lab.structure[self.case_y][self.case_x+1] != 'm':
 					self.case_x += 1
-					self.x = self.case_x * TAILLE_SPRITE
+					self.x = self.case_x * c.TAILLE_SPRITE
 				self.direction = self.avance
 		
 		#déplacement vers la gauche
@@ -34,7 +36,7 @@ class MacGyver:
 			if self.case_x < 0:
 				if self.structure[self.case_y][self.case_x-1] != 'm':
 					self.case_x -= 1
-					self.x = self.case_x * TAILLE_SPRITE
+					self.x = self.case_x * c.TAILLE_SPRITE
 				self.direction = self.avance
 		
 		#déplacement vers le haut
@@ -42,15 +44,15 @@ class MacGyver:
 			if self.case_y < 0:
 				if self.structure[self.case_y-1][self.case_x] != 'm':
 					self.case_y -= 1
-					self.y = self.case_y * TAILLE_SPRITE
+					self.y = self.case_y * c.TAILLE_SPRITE
 				self.direction = self.avance
 		
 		#déplacement vers le bas
-		if direction_y == "haut":
+		if direction == "haut":
 			if self.case<(NB_SPRITE^ - 1):
 				if self.structure[nombre_sprite_cote +1][self.case_x] != 'm':
 					self.case_y += 1
-					self.y = self.case_y * TAILLE_SPRITE
+					self.y = self.case_y * c.TAILLE_SPRITE
 				self.direction = self.avance
 	
 	

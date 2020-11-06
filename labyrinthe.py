@@ -1,8 +1,8 @@
 import pygame
-from constantes import *
-
+import constantes as c
 #définition de la classe labyrinthe 
 #et initialisation de sa structure avec pygame
+
 
 class Labyrinthe:
 	def __init__(self):
@@ -32,16 +32,16 @@ class Labyrinthe:
 		   du labyrinthe avec les textures"""
 		
 		self.fenetre = 0
-		self.mur = pygame.image.load(IMAGE_MUR).convert()
-		self.depart = pygame.image.load(IMAGE_DEPART).convert()
-		self.gardien = pygame.image.load(IMAGE_GARDIEN).convert_alpha()
+		self.mur = pygame.image.load(c.IMAGE_MUR).convert()
+		self.depart = pygame.image.load(c.IMAGE_DEPART).convert()
+		self.gardien = pygame.image.load(c.IMAGE_GARDIEN).convert_alpha()
 		
 		nb_ligne = 0
 		for ligne in self.structure:
 			nb_case = 0
 			for sprite in ligne:				
-				x = nb_case * TAILLE_SPRITE
-				y = nb_ligne * TAILLE_SPRITE
+				x = nb_case * c.TAILLE_SPRITE
+				y = nb_ligne * c.TAILLE_SPRITE
 				if sprite == 'm':
 					fenetre.blit(self.mur,(x,y))
 				elif sprite == 'd':
@@ -51,6 +51,7 @@ class Labyrinthe:
 				nb_case += 1
 			nb_ligne += 1
 		pygame.display.flip()
-			
+
+
 
                 
