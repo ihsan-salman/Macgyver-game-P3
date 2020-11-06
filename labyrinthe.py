@@ -10,6 +10,7 @@ class Labyrinthe:
 		   à partir du fichier .txt"""
 		self.structure = 0
 		self.fichier = 'labyrinthe.txt'
+		self.fenetre = 0
 		
 	
 	def generer(self):
@@ -31,7 +32,7 @@ class Labyrinthe:
 		"""méthode permettant d'afficher la structure 
 		   du labyrinthe avec les textures"""
 		
-		self.fenetre = 0
+		
 		self.mur = pygame.image.load(c.IMAGE_MUR).convert()
 		self.depart = pygame.image.load(c.IMAGE_DEPART).convert()
 		self.gardien = pygame.image.load(c.IMAGE_GARDIEN).convert_alpha()
@@ -51,7 +52,4 @@ class Labyrinthe:
 				nb_case += 1
 			nb_ligne += 1
 		pygame.display.flip()
-
-
-
-                
+		
