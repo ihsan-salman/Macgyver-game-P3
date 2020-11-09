@@ -5,53 +5,36 @@
 import pygame
 from pygame.locals import *
 
-# importation des modules
+# importation of moduls
 
-import labyrinthe as lb
-import constantes as c
-import macgyver as m
+import labyrinth as labyrinth
+import constants as constants
 
-# initialisation de la fenetre
+# Window initialization
 
 pygame.init()
-fenetre = pygame.display.set_mode((c.COTE_FENETRE , c.COTE_FENETRE))
-pygame.display.set_caption(c.TITRE_FENETRE)
+screen = pygame.display.set_mode((constants.WINDOW_SIZE , constants.WINDOW_SIZE))
+pygame.display.set_caption(constants.WINDOW_TITLE)
+image_font=pygame.image.load(constants.IMAGE_FONT)
 
-
-# boucle principale
+# Main loop 
 
 run = True
 
 while run:
 	
-	
 	pygame.time.Clock().tick(30)
+	
+	screen.blit(image_font, (0, 0))
+	
+	
+	"""instances of classes"""
+	lab = labyrinth.Labyrinth(screen)
+	
 	
 	for e in pygame.event.get():
 		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE :
         	 run = False
-				
-		"""instance des classes"""
-		lab = lb.Labyrinthe()
-		lab.generer()
-		lab.afficher(fenetre)
-		Mg = m.MacGyver(c.IMAGE_MACGYVER)
-		
-		#commande directionnelle pour déplacer 
-		#le personnage dans le labyrinthe
-		if e.type == KEYDOWN and e.key == K_RIGHT:
-			Mg.se_deplace('droite')
-		elif  e.type == KEYDOWN and e.key == K_LEFT:
-			Mg.se_deplace('gauche')
-		elif e.type == KEYDOWN and e.key == K_UP:
-			Mg.se_deplace('haut')
-		elif e.type == KEYDOWN and e.key == K_DOWN:
-			Mg.se_deplace('bas')	
-			
-		# condition de victoire
-		if lab.structure[Mg.case_y][Mg.case_x] == 'a':
-			run = False
-	
 
 pygame.display.flip()
        
