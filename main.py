@@ -30,13 +30,13 @@ while run:
 	
 	"""instances of classes"""
 	lab = labyrinth.Labyrinth(screen)
-	
+	pygame.display.flip()
 	
 	for e in pygame.event.get():
 		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE :
         	 run = False
 
-pygame.display.flip()
+
        
 			
 				
