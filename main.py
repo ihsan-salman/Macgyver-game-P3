@@ -31,10 +31,9 @@ while run:
 	
 	"""instances of classes"""
 	lab = labyrinth.Labyrinth(screen)
-	struc = lab.structure
-	mac = macgyver.Macgyver(struc)
-	lab.display(mac.x, mac.y)
-	
+	mac = macgyver.Macgyver(lab)
+	lab.display()
+	lab.display_hero(0, 14)
 	
 	
 	for e in pygame.event.get():
@@ -42,7 +41,8 @@ while run:
         	 run = False
 		elif e.type == KEYDOWN and e.key == K_RIGHT :
 			mac.move_right()
-	
+			
+		lab.display_hero(mac.x, mac.y)	
 	pygame.display.flip()
 	
 	

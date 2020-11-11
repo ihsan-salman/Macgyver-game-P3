@@ -8,17 +8,18 @@ import constants as constants
 
 
 class Macgyver:
-	def __init__(self, struc):
+	def __init__(self, map):
+		self.map = map
 		self.pos_x = 0
 		self.pos_y = 0
 		self.x = 0
 		self.y = 14
-		self.map = struc
+		
 		
 		
 	def move_right(self):
 		if self.pos_x > 0:
-			if self.map.structure[self.pos_x][self.pos_y + 1] != 'm':
+			if self.map.structure[self.pos_x + 1][self.pos_y] != 'm':
 				self.pos_x += 1 
 				self.x = self.pos_x * constants.SPRITE_SIZE
 				
