@@ -10,8 +10,8 @@ class Labyrinth:
 		self.structure = []
 		self.file = 'level.txt'
 		self.screen = screen
+		self.element = 0
 		self.generate()
-		self.display()
 		
 	
 	def generate(self):
@@ -23,11 +23,18 @@ class Labyrinth:
 					if sprite != '\n':
 						ligne.append(sprite)
 				self.structure.append(ligne)
+	
+	def guardian_pos(self):
+		for x in range(len(self.structure)):
+			for y in range(len(self.structure[x])):
+				element = self.structure[y][x]
+				if element == 'g':
+					self.guardian_pos = (y, x)
 		
 
 			
 		   
-	def display(self):
+	def display(self, pos_mac_x, pos_mac_y):
 		# display the structure labyrinth with textures
 		
 		self.wall = pygame.image.load(constants.IMAGE_WALL).convert()
@@ -39,14 +46,14 @@ class Labyrinth:
 			for y in range(len(self.structure[x])):
 				element = self.structure[y][x]
 				if element == 'm':
-					self.screen.blit(self.wall, (x*44, y*44))
+					self.screen.blit(self.wall, (x * 44, y * 44))
 				elif element == 'd':
-					self.screen.blit(self.start, (x*44, y*44))
+					self.screen.blit(self.start, (x * 44, y * 44))
 				elif element == 'g':
-					self.screen.blit(self.guardian, (x*44, y*44))
+					self.screen.blit(self.guardian, (x * 44, y * 44))
 				elif element == 's':
-					self.screen.blit(self.start, (x*44, y*44))
-					self.screen.blit(self.macgyver, (x*44, y*44))
+					self.screen.blit(self.start, (x * 44, y * 44))
+					self.screen.blit(self.macgyver, (pos_mac_x * 44, pos_mac_y * 44))
 		
 		
 
