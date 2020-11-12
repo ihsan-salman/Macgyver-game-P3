@@ -14,7 +14,6 @@ class Macgyver:
 		self.pos_y = 14
 		self.x = 0
 		self.y = 14
-		self.macgyver = pygame.image.load(constants.IMAGE_MACGYVER).convert_alpha()
 		
 		
 	def move_right(self):
