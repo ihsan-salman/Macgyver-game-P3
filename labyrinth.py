@@ -12,7 +12,7 @@ class Labyrinth:
 		self.screen = screen
 		self.element = 0
 		self.generate()
-		
+		self.display()
 	
 	def generate(self):
 		#creation of a list from a file
@@ -30,7 +30,6 @@ class Labyrinth:
 				element = self.structure[y][x]
 				if element == 'g':
 					self.guardian_pos = [y, x]
-
 			
 		   
 	def display(self):
@@ -53,7 +52,9 @@ class Labyrinth:
 				elif element == 's':
 					self.screen.blit(self.start, (x * 44, y * 44))
 		
+		
 	def display_hero(self, pos_mac_x, pos_mac_y):
+		
 		self.macgyver = pygame.image.load(constants.IMAGE_MACGYVER).convert_alpha()
 			
 		for x in range(len(self.structure)):

@@ -7,9 +7,9 @@ from pygame.locals import *
 
 # importation of moduls
 
-import labyrinth as labyrinth
+from labyrinth import Labyrinth
 import constants as constants
-import macgyver as macgyver
+from macgyver import Macgyver
 
 # Window initialization
 
@@ -30,19 +30,19 @@ while run:
 	
 	
 	"""instances of classes"""
-	lab = labyrinth.Labyrinth(screen)
-	mac = macgyver.Macgyver(lab)
-	lab.display()
-	lab.display_hero(0, 14)
-	
+	lab = Labyrinth(screen)
+	mac = Macgyver(lab)
+	lab.display_hero(0, 14)	
+
 	
 	for e in pygame.event.get():
 		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE :
         	 run = False
 		elif e.type == KEYDOWN and e.key == K_RIGHT :
 			mac.move_right()
-			
-		lab.display_hero(mac.x, mac.y)	
+	lab.display_hero(mac.x, mac.y)
+
+		
 	pygame.display.flip()
 	
 	
