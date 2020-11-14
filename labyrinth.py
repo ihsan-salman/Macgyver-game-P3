@@ -72,7 +72,7 @@ class Labyrinth:
 				elif element == 's':
 					self.screen.blit(self.start, (x * constants.SPRITE_SIZE, y * constants.SPRITE_SIZE))
 		 	
-				
+		"""		
 	def display_hero(self, pos_mac_x, pos_mac_y):
 		# diplay the hero with the position given by the choice of the player
 		
@@ -81,5 +81,5 @@ class Labyrinth:
 			for y in range(len(self.structure[x])):
 				element = self.structure[y][x]
 				if element == 's':
-						self.screen.blit(self.macgyver, (pos_mac_x * constants.SPRITE_SIZE, pos_mac_y * constants.SPRITE_SIZE))
+						self.screen.blit(self.macgyver, (pos_mac_x * constants.SPRITE_SIZE, pos_mac_y * constants.SPRITE_SIZE))"""
 		

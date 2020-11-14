@@ -30,7 +30,6 @@ while run:
 	# Instances of classes
 	lab = Labyrinth(screen)
 	mac = Macgyver(lab)
-	lab.display_hero(0, 14)	
 
 	# player action that allows interaction with the game
 	for e in pygame.event.get():
@@ -39,7 +38,7 @@ while run:
 			print('you quit the game')
 		elif e.type == KEYDOWN and e.key == K_RIGHT :
 			mac.move_right()
-	lab.display_hero(mac.pos_x, mac.pos_y)
+			pygame.display.flip()
 
 		
 	pygame.display.flip()
