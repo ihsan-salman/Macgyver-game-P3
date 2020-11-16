@@ -12,7 +12,7 @@ from macgyver import Macgyver
 # Window initialization
 
 pygame.init()
-screen = pygame.display.set_mode((constants.WINDOW_SIZE , constants.WINDOW_SIZE))
+screen = pygame.display.set_mode((constants.WINDOW_SIZE, constants.WINDOW_SIZE))
 pygame.display.set_caption(constants.WINDOW_TITLE)
 image_font = pygame.image.load(constants.IMAGE_FONT)
 
