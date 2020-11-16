@@ -36,13 +36,14 @@ while run:
 		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE :
 			run = False
 			print('you quit the game')
-		elif e.type == KEYDOWN and e.key == K_RIGHT :
-			mac.move_right()
-			pygame.display.flip()
+		if e.type == pygame.KEYDOWN:
+			if e.key == pygame.K_RIGHT :
+				mac.move_right()
+
 
 		
-	pygame.display.flip()
 	
+	pygame.display.flip()
 	
 
        

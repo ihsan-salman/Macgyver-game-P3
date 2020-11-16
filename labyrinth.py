@@ -25,13 +25,8 @@ class Labyrinth:
 				self.structure.append(ligne)
 	
 	def guardian_pos(self):
-		for x in range(len(self.structure)):
-			for y in range(len(self.structure[x])):
-				element = self.structure[y][x]
-				if element == 'g':
-					self.guardian_pos = [y, x]
+		self.guardian_pos = [0, 7]
 	"""
-	
 	def pos_items(self):
 		self.items_pos = []
 		for x in range(len(self.structure)):
@@ -71,15 +66,3 @@ class Labyrinth:
 					self.screen.blit(self.guardian, (x * constants.SPRITE_SIZE, y * constants.SPRITE_SIZE))
 				elif element == 's':
 					self.screen.blit(self.start, (x * constants.SPRITE_SIZE, y * constants.SPRITE_SIZE))
-		 	
-		"""		
-	def display_hero(self, pos_mac_x, pos_mac_y):
-		# diplay the hero with the position given by the choice of the player
-		
-		self.macgyver = pygame.image.load(constants.IMAGE_MACGYVER).convert_alpha()
-		for x in range(len(self.structure)):
-			for y in range(len(self.structure[x])):
-				element = self.structure[y][x]
-				if element == 's':
-						self.screen.blit(self.macgyver, (pos_mac_x * constants.SPRITE_SIZE, pos_mac_y * constants.SPRITE_SIZE))"""
-		
