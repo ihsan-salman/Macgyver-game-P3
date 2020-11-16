@@ -17,7 +17,7 @@ class Macgyver:
 		
 		
 	def move_right(self):
-		#print(self.labyrinth.structure[self.pos_y][self.pos_x + 1])
+		# Checking two conditions to be sure that the movement is possible
 		if ((self.pos_x) <= (constants.NB_SPRITE - 1)) and (self.labyrinth.structure[self.pos_y][self.pos_x + 1] != 'm'):
 			self.pos_x += 1
 			self.display()

@@ -35,8 +35,8 @@ class Labyrinth:
 				if element == 'o':
 					position_items = (y, x)
 					self.items_pos.append(position_items)
-			self.pos_items = random.sample(self.items_pos, 3)
-		"""	
+			self.pos_items = random.sample(self.items_pos, 1)"""
+		
 			
 	def display(self):
 		# display the structure labyrinth with all elements
@@ -48,12 +48,12 @@ class Labyrinth:
 		self.ether = pygame.image.load(constants.IMAGE_ETHER).convert_alpha()
 		self.syringe = pygame.image.load(constants.IMAGE_SYRINGE).convert_alpha()
 		
-		needle_pos, syringe_pos, ether_pos = self.pos_items
+		needle_pos = self.pos_items
 		
 		self.screen.blit(self.needle, (needle_pos[0] * constants.SPRITE_SIZE, needle_pos[1] * constants.SPRITE_SIZE))
 		self.screen.blit(self.syringe, (syringe_pos[0] * constants.SPRITE_SIZE, syringe_pos[1] * constants.SPRITE_SIZE))
 		self.screen.blit(self.ether, (ether_pos[0] * constants.SPRITE_SIZE, ether_pos[1] * constants.SPRITE_SIZE))
-        """	
+        """
 		
 		for x in range(len(self.structure)):
 			for y in range(len(self.structure[x])):

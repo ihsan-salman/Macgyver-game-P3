@@ -31,11 +31,13 @@ while run:
 	lab = Labyrinth(screen)
 	mac = Macgyver(lab)
 
-	# player action that allows interaction with the game
+	# Player action that allows interaction with the game
 	for e in pygame.event.get():
+		# Quit the game
 		if e.type == pygame.QUIT or e.type == KEYDOWN and e.key == K_SPACE :
 			run = False
 			print('you quit the game')
+		# Move the hero 
 		if e.type == pygame.KEYDOWN:
 			if e.key == pygame.K_RIGHT :
 				mac.move_right()
