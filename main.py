@@ -21,15 +21,13 @@ image_font = pygame.image.load(constants.IMAGE_FONT)
 
 run = True
 print('Game start')
+pygame.time.Clock().tick(30)
+screen.blit(image_font, (0, 0))
+	
+# Instances of classes
+lab = Labyrinth(screen)
+mac = Macgyver(lab)
 while run:
-	
-	pygame.time.Clock().tick(30)
-	screen.blit(image_font, (0, 0))
-	
-	
-	# Instances of classes
-	lab = Labyrinth(screen)
-	mac = Macgyver(lab)
 
 	# Player action that allows interaction with the game
 	for e in pygame.event.get():
