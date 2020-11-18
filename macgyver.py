@@ -14,7 +14,7 @@ class Macgyver:
 		self.display()
 	
 	def display(self):
-			self.labyrinth.screen.blit(self.macgyver, (self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))
+		self.labyrinth.screen.blit(self.macgyver, (self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))
 	
 	def display_font(self):
 		self.labyrinth.screen.blit(self.font, (self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))
