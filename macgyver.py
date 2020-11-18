@@ -13,6 +13,7 @@ class Macgyver:
 		self.display()
 	
 	def display(self):
+		self.labyrinth.display()
 		self.labyrinth.screen.blit(self.macgyver, (self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))
 		
 		
@@ -21,25 +22,25 @@ class Macgyver:
 		if ((self.pos_x) < (constants.NB_SPRITE - 1)) and (self.labyrinth.structure[self.pos_y][self.pos_x + 1] != 'm'):
 			self.pos_x += 1
 			self.display()
-			print('you choose to move to the right', self.pos_x, self.pos_y)
+			print('you choose to move to the right', self.pos_y, self.pos_x)
 			
 			
 	def move_left(self):
 		if (self.pos_x > 0) and (self.labyrinth.structure[self.pos_y][self.pos_x - 1] != 'm'):
 			self.pos_x -= 1
 			self.display()
-			print('you choose to move to the left', self.pos_x, self.pos_y)
+			print('you choose to move to the left', self.pos_y, self.pos_x)
 	
 	
 	def move_up(self):
 		if (self.pos_y > 0) and (self.labyrinth.structure[self.pos_y - 1][self.pos_x] != 'm'):
 			self.pos_y -= 1
 			self.display()
-			print('you choose to move to the top', self.pos_x, self.pos_y)
+			print('you choose to move to the top', self.pos_y, self.pos_x)
 			
 			
 	def move_down(self):
 		if (self.pos_y < (constants.NB_SPRITE - 1)) and (self.labyrinth.structure[self.pos_y + 1][self.pos_x] != 'm'):
 				self.pos_y += 1
 				self.display()
-				print('you choose to move down', self.pos_x, self.pos_y)
+				print('you choose to move down', self.pos_y, self.pos_x)

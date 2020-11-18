@@ -15,16 +15,17 @@ pygame.init()
 screen = pygame.display.set_mode((constants.WINDOW_SIZE, constants.WINDOW_SIZE))
 pygame.display.set_caption(constants.WINDOW_TITLE)
 image_font = pygame.image.load(constants.IMAGE_FONT)
+screen.blit(image_font, (0, 0))
 
 
 # Main loop 
 
 run = True
 print('Game start')
-pygame.time.Clock().tick(30)
-screen.blit(image_font, (0, 0))
+#pygame.time.Clock().tick(30)
 	
 # Instances of classes
+
 lab = Labyrinth(screen)
 mac = Macgyver(lab)
 
@@ -46,6 +47,9 @@ while run:
 				mac.move_up()
 			if e.key == pygame.K_DOWN :
 				mac.move_down()
-			
+
+		if [mac.pos_y, mac.pos_x] == [0, 7]:
+			print('you win!')
+			run = False
 	
 	pygame.display.flip()
