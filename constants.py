@@ -11,6 +11,7 @@ WINDOW_TITLE = "MacGyver Labyrinth Game"
 #Lists of images of the game
 
 IMAGE_FONT = "images/font.png"
+IMAGE_FONT_SPRITE = "images/font_sprite.png"
 IMAGE_WALL = "images/wall.png"
 IMAGE_START = "images/start.png"
 IMAGE_GUARDIAN = "images/guardian.png"

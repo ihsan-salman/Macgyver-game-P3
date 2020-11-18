@@ -48,6 +48,7 @@ while run:
 			if e.key == pygame.K_DOWN :
 				mac.move_down()
 
+		# Condition to win 
 		if [mac.pos_y, mac.pos_x] == [0, 7]:
 			print('you win!')
 			run = False
