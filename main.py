@@ -8,6 +8,7 @@ from pygame.locals import *
 from labyrinth import Labyrinth
 import constants as constants
 from macgyver import Macgyver
+from items import Items 
 
 # Window initialization
 
@@ -22,12 +23,12 @@ screen.blit(image_font, (0, 0))
 
 run = True
 print('Game start')
-#pygame.time.Clock().tick(30)
 	
 # Instances of classes
 
 lab = Labyrinth(screen)
 mac = Macgyver(lab)
+it = Items(lab)
 
 while run:
 
