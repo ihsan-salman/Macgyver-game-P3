@@ -24,10 +24,6 @@ class Labyrinth:
 					if sprite != '\n':
 						ligne.append(sprite)
 				self.structure.append(ligne)
-	
-
-	def guardian_pos(self):
-		self.guardian_pos = [0, 7]
 		
 	
 	# Display the structure labyrinth with all elements

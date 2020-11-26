@@ -29,7 +29,7 @@ print('Game start')
 lab = Labyrinth(screen)
 mac = Macgyver(lab)
 it = Items(lab)
-
+mac.collect(it)
 while run:
 
 	# Player action that allows interaction with the game
@@ -49,9 +49,14 @@ while run:
 			if e.key == pygame.K_DOWN :
 				mac.move_down()
 
-		# Condition to win 
-		if [mac.pos_y, mac.pos_x] == [0, 7]:
+		# Condition to win the game
+		#[0, 7] is the position of the guardian
+		if [mac.pos_y, mac.pos_x] == [0,7] and len(mac.bag) == 3:
 			print('you win!')
+			run = False
+		# Condition to lose the game	
+		elif [mac.pos_y, mac.pos_x] == [0, 7]:
+			print('you are dead')
 			run = False
 	
 	pygame.display.flip()

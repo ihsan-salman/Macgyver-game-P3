@@ -13,6 +13,7 @@ class Macgyver:
 		self.pos_y = 14
 		self.macgyver = pygame.image.load(constants.IMAGE_MACGYVER).convert_alpha()
 		self.font = pygame.image.load(constants.IMAGE_FONT_SPRITE).convert_alpha()
+		self.bag = []
 		# Initialize first postion 
 		self.display()
 
@@ -35,13 +36,13 @@ class Macgyver:
 			self.labyrinth.display()
 			self.pos_x += 1
 			self.display()
-			
-			
+			self. collect(self.items)
 	def move_left(self):
 		if (self.pos_x > 0) and (self.labyrinth.structure[self.pos_y][self.pos_x - 1] != 'm'):
 			self.display_font()
 			self.pos_x -= 1
 			self.display()
+			self. collect(self.items)
 	
 	
 	def move_up(self):
@@ -49,6 +50,7 @@ class Macgyver:
 			self.display_font()
 			self.pos_y -= 1
 			self.display()
+			self. collect(self.items)
 			
 			
 	def move_down(self):
@@ -56,3 +58,29 @@ class Macgyver:
 				self.display_font()
 				self.pos_y += 1
 				self.display()
+				self. collect(self.items)
+
+	def collect(self, items):
+		self.items = items
+		if [self. pos_y, self.pos_x] == self.items.needle_pos:
+			self.bag.append('needle')
+			self.items.needle_pos = [13,0]
+			print('You have a needle', len(self.bag))
+		elif [self.pos_y, self.pos_x] == self.items.syringe_pos:	
+			self.bag.append('syringe')
+			self.items.syringe_pos = [13,0]
+			print('You have a syringe', len(self.bag))
+		elif [self.pos_y, self.pos_x] == self.items.ether_pos:
+			self.bag.append('ether')
+			self.items.ether_pos = [13,0]
+			print('You have an ethter', len(self.bag))
+		if len(self.bag) == 3:
+			print('You have all items! : Direction to the evil guardian ')
+
+	"""def win(self):
+		if [self.pos_y, self.pos_x] == [0,7] and len(self.bag) == 3:
+			print('you win')"""
+
+
+
+
