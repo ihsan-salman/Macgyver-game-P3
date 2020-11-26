@@ -74,8 +74,6 @@ class Macgyver:
 			self.bag.append('ether')
 			self.items.ether_pos = [13,0]
 			print('You have an ethter', len(self.bag))
-		if len(self.bag) == 3:
-			print('You have all items! : Direction to the evil guardian ')
 
 	"""def win(self):
 		if [self.pos_y, self.pos_x] == [0,7] and len(self.bag) == 3:
