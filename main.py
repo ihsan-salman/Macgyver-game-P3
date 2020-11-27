@@ -11,21 +11,25 @@ from macgyver import Macgyver
 from items import Items 
 
 # Window initialization
-
 pygame.init()
-screen = pygame.display.set_mode((constants.WINDOW_SIZE, constants.WINDOW_SIZE))
+screen = pygame.display.set_mode((constants.WINDOW_SIZE, constants.WINDOW_SIZE + 44))
 pygame.display.set_caption(constants.WINDOW_TITLE)
+
+# Font initialization
 image_font = pygame.image.load(constants.IMAGE_FONT)
 screen.blit(image_font, (0, 0))
 
+# Win image
+image_win = pygame.image.load(constants.IMAGE_WIN)
 
-# Main loop 
+# Death image 
+image_death = pygame.image.load(constants.IMAGE_DEATH)
 
+# Main loop
 run = True
 print('Game start')
 	
 # Instances of classes
-
 lab = Labyrinth(screen)
 mac = Macgyver(lab)
 it = Items(lab)
@@ -52,11 +56,16 @@ while run:
 		# Condition to win the game
 		#[0, 7] is the position of the guardian
 		if [mac.pos_y, mac.pos_x] == [0,7] and len(mac.bag) == 3:
+			# Display a white font and the winner's image
+			screen.blit(image_font,(0, 0))
+			screen.blit(image_win,(0, 0))
 			print('you win!')
-			run = False
+			
 		# Condition to lose the game	
 		elif [mac.pos_y, mac.pos_x] == [0, 7]:
+			# Display a white font and the loser's image
+			screen.blit(image_font,(0, 0))
+			screen.blit(image_death,(0, constants.WINDOW_SIZE//4))
 			print('you are dead')
-			run = False
 	
 	pygame.display.flip()
