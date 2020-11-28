@@ -20,8 +20,8 @@ class Items:
 		# Choose 2 number and check the corresponding position 
 		self.pos_item = []	
 		while self.pos_item == []:
-			self.x = randint(1, 14)
-			self.y = randint(1, 14)
+			self.x = randint(1, 13)
+			self.y = randint(1, 13)
 			# Condition checking if the position isn'n a wall 
 			# And not the same previous position
 			if self.labyrinth.structure[self.y][self.x] != 'm' \
@@ -44,3 +44,4 @@ class Items:
 		self.ether_pos = self.item_pos()
 		self.labyrinth.screen.blit(self.ether, (self.ether_pos[1] * \
 			constants.SPRITE_SIZE, self.ether_pos[0] * constants.SPRITE_SIZE))
+		print(self.needle_pos, self.syringe_pos, self.ether_pos)
