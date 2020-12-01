@@ -4,6 +4,7 @@ import constants as constants
 
 """labyrinth class definition"""
 
+
 class Labyrinth:
 
 	def __init__(self, screen):
@@ -13,7 +14,6 @@ class Labyrinth:
 		self.screen = screen
 		self.generate()
 		self.display()
-	
 
 	def generate(self):
 		# Creation of a list from a file
@@ -21,13 +21,12 @@ class Labyrinth:
 			# List run
 			for line in file:
 				ligne = []
-				for sprite in line: 
+				for sprite in line:
 					if sprite != '\n':
 						# Adding each element one by one
 						ligne.append(sprite)
 				self.structure.append(ligne)
-		
-	
+
 	def display(self):
 		# Display the labyrinth with all elements
 		self.wall = pygame.image.load(constants.IMAGE_WALL).convert()
@@ -40,14 +39,14 @@ class Labyrinth:
 				element = self.structure[y][x]
 				# Condition to display each element
 				if element == 'm':
-					self.screen.blit(self.wall, (x * constants.SPRITE_SIZE, y * \
-						constants.SPRITE_SIZE))
+					self.screen.blit(self.wall, (x * constants.SPRITE_SIZE,
+						y * constants.SPRITE_SIZE))
 				elif element == 'd':
-					self.screen.blit(self.start, (x * constants.SPRITE_SIZE, y * \
-						constants.SPRITE_SIZE))
+					self.screen.blit(self.start, (x * constants.SPRITE_SIZE,
+						y * constants.SPRITE_SIZE))
 				elif element == 'g':
-					self.screen.blit(self.guardian, (x * constants.SPRITE_SIZE, y * \
-						constants.SPRITE_SIZE))
+					self.screen.blit(self.guardian, (x * constants.SPRITE_SIZE,
+						y * constants.SPRITE_SIZE))
 				elif element == 's':
-					self.screen.blit(self.start, (x * constants.SPRITE_SIZE, y * \
-						constants.SPRITE_SIZE))
+					self.screen.blit(self.start, (x * constants.SPRITE_SIZE,
+						y * constants.SPRITE_SIZE))

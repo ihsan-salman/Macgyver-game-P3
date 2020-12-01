@@ -1,6 +1,6 @@
 """Constants of the game"""
 
-#Window parameter
+# Window parameter
 
 NB_SPRITE = 15
 SPRITE_SIZE = 44
@@ -8,7 +8,7 @@ WINDOW_SIZE = NB_SPRITE * SPRITE_SIZE         # 15 * 44 = 660
 WINDOW_TITLE = "MacGyver Labyrinth Game"
 
 
-#Lists of images of the game
+# Lists of images of the game
 
 IMAGE_FONT = "images/font.png"
 IMAGE_FONT_SPRITE = "images/font_sprite.png"
@@ -22,4 +22,3 @@ IMAGE_NEEDLE = "images/aiguille.png"
 IMAGE_ETHER = "images/ether.png"
 IMAGE_TUBE = "images/tube_plastique.png"
 IMAGE_SYRINGE = "images/seringue.png"
-
