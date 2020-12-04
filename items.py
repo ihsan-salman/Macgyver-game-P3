@@ -29,7 +29,7 @@ class Items:
 				self.list_position.append((self.y, self.x))
 
 	def display(self):
-		# initialize items position and display
+		# initialize items position and display thems
 		self.item_position()
 		self.needle_position = self.list_position[0]
 		self.labyrinth.screen.blit(self.needle, (self.needle_position[1] *
