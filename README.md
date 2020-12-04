@@ -1,7 +1,7 @@
 # Macgyver game
 
 Here is the game of Macgyver' maze. 
-There are many items that you have to collet to defeat the guardian. 
+There are many items that you have to collect to defeat the guardian. 
 
 # Installation and requierement 
 
