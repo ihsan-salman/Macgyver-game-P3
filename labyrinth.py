@@ -20,12 +20,12 @@ class Labyrinth:
 		with open(self.file, "r") as file:
 			# List run
 			for line in file:
-				ligne = []
+				line_list = []
 				for sprite in line:
 					if sprite != '\n':
 						# Adding each element one by one
-						ligne.append(sprite)
-				self.structure.append(ligne)
+						line_list.append(sprite)
+				self.structure.append(line_list)
 
 	def display(self):
 		# Display the labyrinth with all elements
