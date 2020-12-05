@@ -19,10 +19,11 @@ class Items:
 		self.list_position = []
 		# until 3 position in accordance with the conditions
 		while len(self.list_position) != 3:
+			# 2 randown integer between 1 and 13
 			self.x = randint(1, 13)
 			self.y = randint(1, 13)
 			# Check if the position isn'n a wall
-			# And not even contain in the position lits
+			# And not even contain in the position list
 			if self.labyrinth.structure[self.y][self.x] != 'm' \
 				and (self.y, self.x) not in self.list_position:
 				# Add the position to the list

@@ -23,7 +23,7 @@ class Macgyver:
 			(self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))
 
 	def display_font(self):
-		# Deleting last hero position's picture method
+		# Deleting last hero position's picture 
 		self.font = pygame.image.load(constants.IMAGE_FONT_SPRITE).convert_alpha()
 		self.labyrinth.screen.blit(self.font,
 			(self.pos_x * constants.SPRITE_SIZE, self.pos_y * constants.SPRITE_SIZE))

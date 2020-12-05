@@ -25,3 +25,5 @@ python3 main.py
 You can move the hero by using the directional keys on the keyboard.
 Pick up the objects by positioning yourself on the same position. 
 Gather all the objects together to get rid of the bad guard and enjoy your victory !
+
+Use "space" to quit the window or the mouse.

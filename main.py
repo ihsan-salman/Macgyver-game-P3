@@ -12,6 +12,7 @@ from items import Items
 
 # Window initialization
 pygame.init()
+# 44 represent the black field in the down of the window
 screen = pygame.display.set_mode(
 	(constants.WINDOW_SIZE, constants.WINDOW_SIZE + 44))
 pygame.display.set_caption(constants.WINDOW_TITLE)
