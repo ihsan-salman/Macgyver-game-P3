@@ -33,8 +33,8 @@ class Items:
 		# initialize items position and display them
 		self.item_position()
 		self.needle_position = self.list_position[0]
-		self.labyrinth.screen.blit(self.needle, (self.needle_position[1] *
-			constants.SPRITE_SIZE, self.needle_position[0] * constants.SPRITE_SIZE))
+		self.labyrinth.screen.blit(self.needle, (self.needle_position[1] 
+												 * constants.SPRITE_SIZE, self.needle_position[0] * constants.SPRITE_SIZE))
 
 		self.syringe_position = self.list_position[1]
 		self.labyrinth.screen.blit(self.syringe, (self.syringe_position[1] *
