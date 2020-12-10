@@ -12,10 +12,11 @@ then, install [Pip](https://pypi.org/project/pip/) by entering in the terminal t
 python3 -m pip --version
 ```
 
-finally install [Pygame](https://www.pygame.org/news) by entering in the terminal the following command line:
+finally, use the requirement document by entering the following command in the terminal:
 ```bash
-python3 -m pip install -U pygame --user
+pip3 install -r requirements.txt
 ```
+
 
 # How to play the game
 To start the game, enter the following command in the terminal:
